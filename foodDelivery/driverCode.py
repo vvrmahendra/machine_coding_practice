@@ -1,4 +1,4 @@
-from foodkart import Foodkart
+from models.foodkart import Foodkart
 if __name__ == "__main__":
     foodkart = Foodkart()
 

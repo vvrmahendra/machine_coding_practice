@@ -1,6 +1,5 @@
-from user import User
-from restaurent import Restaurant
-
+from models.user import User
+from models.restaurent import Restaurant
 
 class Foodkart:
     def __init__(self):
