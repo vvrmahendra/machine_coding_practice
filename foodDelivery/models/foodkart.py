@@ -1,5 +1,6 @@
 from models.user import User
 from models.restaurent import Restaurant
+from models.order import Order
 
 class Foodkart:
     def __init__(self):
@@ -66,12 +67,7 @@ class Foodkart:
             print(f"Insufficient quantity. Available quantity is {restaurant.quantity}.")
             return
         restaurant.update_quantity(-quantity)
-        order = {
-            "restaurant": restaurant.name,
-            "food_item": restaurant.food_item,
-            "quantity": quantity,
-            "price": restaurant.food_price * quantity
-        }
+        order = Order(restaurant.name, restaurant.food_item, quantity, restaurant.food_price*quantity)
         self.current_user.add_order(order)
         print(f"Order placed successfully: {order}")
 
